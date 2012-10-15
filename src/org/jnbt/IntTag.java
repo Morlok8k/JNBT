@@ -59,5 +59,15 @@ public final class IntTag extends Tag {
 	public Integer getValue() {
 		return value;
 	}
+	
+	@Override
+	public String toString() {
+		String name = getName();
+		String append = "";
+		if(name != null && !name.equals("")) {
+			append = "(\"" + this.getName() + "\")";
+		}
+		return "TAG_Int" + append + ": " + value;
+	}
 
 }

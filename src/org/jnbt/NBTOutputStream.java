@@ -151,7 +151,7 @@ public final class NBTOutputStream implements Closeable {
 	 */
 	private void writeByteArrayTagPayload(ByteArrayTag tag) throws IOException {
 		byte[] bytes = tag.getValue();
-		os.writeLong(bytes.length);
+		os.writeInt(bytes.length);
 		os.write(bytes);
 	}
 

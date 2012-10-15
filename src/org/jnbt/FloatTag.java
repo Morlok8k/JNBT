@@ -59,5 +59,15 @@ public final class FloatTag extends Tag {
 	public Float getValue() {
 		return value;
 	}
+	
+	@Override
+	public String toString() {
+		String name = getName();
+		String append = "";
+		if(name != null && !name.equals("")) {
+			append = "(\"" + this.getName() + "\")";
+		}
+		return "TAG_Float" + append + ": " + value;
+	}
 
 }

@@ -88,9 +88,7 @@ public final class NBTInputStream implements Closeable {
 	 */
 	private Tag readTag(int depth) throws IOException {
 		int type = is.readByte() & 0xFF;
-		
-		System.out.println(type);
-		
+				
 		String name;
 		if(type != NBTConstants.TYPE_END) {
 			int nameLength = is.readShort() & 0xFFFF;
@@ -133,18 +131,18 @@ public final class NBTInputStream implements Closeable {
 		case NBTConstants.TYPE_DOUBLE:
 			return new DoubleTag(name, is.readDouble());
 		case NBTConstants.TYPE_BYTE_ARRAY:
-			int length = ((IntTag) readTagPayload(NBTConstants.TYPE_INT, "", depth)).getValue();
+			int length = is.readInt();
 			byte[] bytes = new byte[length];
 			is.readFully(bytes);
 			return new ByteArrayTag(name, bytes);
 		case NBTConstants.TYPE_STRING:
-			length = ((ShortTag) readTagPayload(NBTConstants.TYPE_SHORT, "", depth)).getValue();
+			length = is.readShort();
 			bytes = new byte[length];
 			is.readFully(bytes);
 			return new StringTag(name, new String(bytes, NBTConstants.CHARSET));
 		case NBTConstants.TYPE_LIST:
-			int childType = ((ByteTag) readTagPayload(NBTConstants.TYPE_BYTE, "", depth)).getValue();
-			length = ((IntTag) readTagPayload(NBTConstants.TYPE_INT, "", depth)).getValue();
+			int childType = is.readByte();
+			length = is.readInt();
 			
 			List<Tag> tagList = new ArrayList<Tag>();
 			for(int i = 0; i < length; i++) {
