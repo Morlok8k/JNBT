@@ -58,7 +58,7 @@ public final class LongTag extends Tag {
 	 * @param value
 	 *            The value.
 	 */
-	public LongTag(String name, long value) {
+	public LongTag(final String name, final long value) {
 	
 		super(name);
 		this.value = value;
@@ -73,10 +73,10 @@ public final class LongTag extends Tag {
 	@Override
 	public String toString() {
 	
-		String name = getName();
+		final String name = getName();
 		String append = "";
-		if (name != null && !name.equals("")) {
-			append = "(\"" + this.getName() + "\")";
+		if ((name != null) && !name.equals("")) {
+			append = "(\"" + getName() + "\")";
 		}
 		return "TAG_Long" + append + ": " + value;
 	}
@@ -90,7 +90,7 @@ public final class LongTag extends Tag {
 	
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + (int) (value ^ (value >>> 32));
+		result = (prime * result) + (int) (value ^ (value >>> 32));
 		return result;
 	}
 	
@@ -99,12 +99,12 @@ public final class LongTag extends Tag {
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(final Object obj) {
 	
 		if (this == obj) { return true; }
 		if (!super.equals(obj)) { return false; }
 		if (!(obj instanceof LongTag)) { return false; }
-		LongTag other = (LongTag) obj;
+		final LongTag other = (LongTag) obj;
 		if (value != other.value) { return false; }
 		return true;
 	}

@@ -58,7 +58,7 @@ public final class StringTag extends Tag {
 	 * @param value
 	 *            The value.
 	 */
-	public StringTag(String name, String value) {
+	public StringTag(final String name, final String value) {
 	
 		super(name);
 		this.value = value;
@@ -73,10 +73,10 @@ public final class StringTag extends Tag {
 	@Override
 	public String toString() {
 	
-		String name = getName();
+		final String name = getName();
 		String append = "";
-		if (name != null && !name.equals("")) {
-			append = "(\"" + this.getName() + "\")";
+		if ((name != null) && !name.equals("")) {
+			append = "(\"" + getName() + "\")";
 		}
 		return "TAG_String" + append + ": " + value;
 	}
@@ -90,7 +90,7 @@ public final class StringTag extends Tag {
 	
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((value == null) ? 0 : value.hashCode());
+		result = (prime * result) + ((value == null) ? 0 : value.hashCode());
 		return result;
 	}
 	
@@ -99,12 +99,12 @@ public final class StringTag extends Tag {
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(final Object obj) {
 	
 		if (this == obj) { return true; }
 		if (!super.equals(obj)) { return false; }
 		if (!(obj instanceof StringTag)) { return false; }
-		StringTag other = (StringTag) obj;
+		final StringTag other = (StringTag) obj;
 		if (value == null) {
 			if (other.value != null) { return false; }
 		} else if (!value.equals(other.value)) { return false; }

@@ -52,7 +52,7 @@ public final class NBTUtils {
 	 *            The tag class.
 	 * @return The type name.
 	 */
-	public static String getTypeName(Class<? extends Tag> clazz) {
+	public static String getTypeName(final Class<? extends Tag> clazz) {
 	
 		if (clazz.equals(ByteArrayTag.class)) {
 			return "TAG_Byte_Array";
@@ -93,7 +93,7 @@ public final class NBTUtils {
 	 * @throws IllegalArgumentException
 	 *             if the tag class is invalid.
 	 */
-	public static int getTypeCode(Class<? extends Tag> clazz) {
+	public static int getTypeCode(final Class<? extends Tag> clazz) {
 	
 		if (clazz.equals(ByteArrayTag.class)) {
 			return NBTConstants.TYPE_BYTE_ARRAY;
@@ -134,7 +134,7 @@ public final class NBTUtils {
 	 * @throws IllegalArgumentException
 	 *             if the tag type is invalid.
 	 */
-	public static Class<? extends Tag> getTypeClass(int type) {
+	public static Class<? extends Tag> getTypeClass(final int type) {
 	
 		switch (type)
 			{

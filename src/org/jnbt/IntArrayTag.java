@@ -60,7 +60,7 @@ public final class IntArrayTag extends Tag {
 	 * @param value
 	 *            The value.
 	 */
-	public IntArrayTag(String name, int[] value) {
+	public IntArrayTag(final String name, final int[] value) {
 	
 		super(name);
 		this.value = value;
@@ -75,14 +75,14 @@ public final class IntArrayTag extends Tag {
 	@Override
 	public String toString() {
 	
-		StringBuilder integers = new StringBuilder();
-		for (int b : value) {
+		final StringBuilder integers = new StringBuilder();
+		for (final int b : value) {
 			integers.append(b).append(" ");
 		}
-		String name = getName();
+		final String name = getName();
 		String append = "";
-		if (name != null && !name.equals("")) {
-			append = "(\"" + this.getName() + "\")";
+		if ((name != null) && !name.equals("")) {
+			append = "(\"" + getName() + "\")";
 		}
 		return "TAG_Int_Array" + append + ": " + integers.toString();
 	}
@@ -96,7 +96,7 @@ public final class IntArrayTag extends Tag {
 	
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + Arrays.hashCode(value);
+		result = (prime * result) + Arrays.hashCode(value);
 		return result;
 	}
 	
@@ -105,12 +105,12 @@ public final class IntArrayTag extends Tag {
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(final Object obj) {
 	
 		if (this == obj) { return true; }
 		if (!super.equals(obj)) { return false; }
 		if (!(obj instanceof IntArrayTag)) { return false; }
-		IntArrayTag other = (IntArrayTag) obj;
+		final IntArrayTag other = (IntArrayTag) obj;
 		if (!Arrays.equals(value, other.value)) { return false; }
 		return true;
 	}

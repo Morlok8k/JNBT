@@ -58,7 +58,7 @@ public final class IntTag extends Tag {
 	 * @param value
 	 *            The value.
 	 */
-	public IntTag(String name, int value) {
+	public IntTag(final String name, final int value) {
 	
 		super(name);
 		this.value = value;
@@ -73,10 +73,10 @@ public final class IntTag extends Tag {
 	@Override
 	public String toString() {
 	
-		String name = getName();
+		final String name = getName();
 		String append = "";
-		if (name != null && !name.equals("")) {
-			append = "(\"" + this.getName() + "\")";
+		if ((name != null) && !name.equals("")) {
+			append = "(\"" + getName() + "\")";
 		}
 		return "TAG_Int" + append + ": " + value;
 	}
@@ -90,7 +90,7 @@ public final class IntTag extends Tag {
 	
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + value;
+		result = (prime * result) + value;
 		return result;
 	}
 	
@@ -99,12 +99,12 @@ public final class IntTag extends Tag {
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(final Object obj) {
 	
 		if (this == obj) { return true; }
 		if (!super.equals(obj)) { return false; }
 		if (!(obj instanceof IntTag)) { return false; }
-		IntTag other = (IntTag) obj;
+		final IntTag other = (IntTag) obj;
 		if (value != other.value) { return false; }
 		return true;
 	}

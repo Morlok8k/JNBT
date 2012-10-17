@@ -58,7 +58,7 @@ public final class FloatTag extends Tag {
 	 * @param value
 	 *            The value.
 	 */
-	public FloatTag(String name, float value) {
+	public FloatTag(final String name, final float value) {
 	
 		super(name);
 		this.value = value;
@@ -73,10 +73,10 @@ public final class FloatTag extends Tag {
 	@Override
 	public String toString() {
 	
-		String name = getName();
+		final String name = getName();
 		String append = "";
-		if (name != null && !name.equals("")) {
-			append = "(\"" + this.getName() + "\")";
+		if ((name != null) && !name.equals("")) {
+			append = "(\"" + getName() + "\")";
 		}
 		return "TAG_Float" + append + ": " + value;
 	}
@@ -90,7 +90,7 @@ public final class FloatTag extends Tag {
 	
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + Float.floatToIntBits(value);
+		result = (prime * result) + Float.floatToIntBits(value);
 		return result;
 	}
 	
@@ -99,12 +99,12 @@ public final class FloatTag extends Tag {
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(final Object obj) {
 	
 		if (this == obj) { return true; }
 		if (!super.equals(obj)) { return false; }
 		if (!(obj instanceof FloatTag)) { return false; }
-		FloatTag other = (FloatTag) obj;
+		final FloatTag other = (FloatTag) obj;
 		if (Float.floatToIntBits(value) != Float.floatToIntBits(other.value)) { return false; }
 		return true;
 	}

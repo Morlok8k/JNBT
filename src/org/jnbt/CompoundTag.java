@@ -61,7 +61,7 @@ public final class CompoundTag extends Tag {
 	 * @param value
 	 *            The value.
 	 */
-	public CompoundTag(String name, Map<String, Tag> value) {
+	public CompoundTag(final String name, final Map<String, Tag> value) {
 	
 		super(name);
 		this.value = Collections.unmodifiableMap(value);
@@ -76,15 +76,15 @@ public final class CompoundTag extends Tag {
 	@Override
 	public String toString() {
 	
-		String name = getName();
+		final String name = getName();
 		String append = "";
-		if (name != null && !name.equals("")) {
-			append = "(\"" + this.getName() + "\")";
+		if ((name != null) && !name.equals("")) {
+			append = "(\"" + getName() + "\")";
 		}
-		StringBuilder bldr = new StringBuilder();
+		final StringBuilder bldr = new StringBuilder();
 		bldr.append("TAG_Compound" + append + ": " + value.size()
 				+ " entries\r\n{\r\n");
-		for (Map.Entry<String, Tag> entry : value.entrySet()) {
+		for (final Map.Entry<String, Tag> entry : value.entrySet()) {
 			bldr.append("   "
 					+ entry.getValue().toString().replaceAll("\r\n", "\r\n   ")
 					+ "\r\n");
@@ -102,7 +102,7 @@ public final class CompoundTag extends Tag {
 	
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((value == null) ? 0 : value.hashCode());
+		result = (prime * result) + ((value == null) ? 0 : value.hashCode());
 		return result;
 	}
 	
@@ -111,12 +111,12 @@ public final class CompoundTag extends Tag {
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(final Object obj) {
 	
 		if (this == obj) { return true; }
 		if (!super.equals(obj)) { return false; }
 		if (!(obj instanceof CompoundTag)) { return false; }
-		CompoundTag other = (CompoundTag) obj;
+		final CompoundTag other = (CompoundTag) obj;
 		if (value == null) {
 			if (other.value != null) { return false; }
 		} else if (!value.equals(other.value)) { return false; }
