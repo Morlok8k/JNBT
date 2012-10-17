@@ -1,36 +1,26 @@
 package org.jnbt;
 
 /*
- * JNBT License
- * 
- * Copyright (c) 2010 Graham Edgecombe
- * All rights reserved.
- * 
+ * JNBT License Copyright (c) 2010 Graham Edgecombe All rights reserved.
  * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- * 
- *     * Redistributions of source code must retain the above copyright notice,
- *       this list of conditions and the following disclaimer.
- *       
- *     * Redistributions in binary form must reproduce the above copyright
- *       notice, this list of conditions and the following disclaimer in the
- *       documentation and/or other materials provided with the distribution.
- *       
- *     * Neither the name of the JNBT team nor the names of its
- *       contributors may be used to endorse or promote products derived from
- *       this software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE. 
+ * modification, are permitted provided that the following conditions are met: *
+ * Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer. * Redistributions in binary
+ * form must reproduce the above copyright notice, this list of conditions and
+ * the following disclaimer in the documentation and/or other materials provided
+ * with the distribution. * Neither the name of the JNBT team nor the names of
+ * its contributors may be used to endorse or promote products derived from this
+ * software without specific prior written permission. THIS SOFTWARE IS PROVIDED
+ * BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ * EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
 /**
@@ -40,7 +30,7 @@ package org.jnbt;
  * 
  */
 public final class NBTUtils {
-
+	
 	/**
 	 * Gets the type name of a tag.
 	 * 
@@ -49,6 +39,7 @@ public final class NBTUtils {
 	 * @return The type name.
 	 */
 	public static String getTypeName(Class<? extends Tag> clazz) {
+	
 		if (clazz.equals(ByteArrayTag.class)) {
 			return "TAG_Byte_Array";
 		} else if (clazz.equals(ByteTag.class)) {
@@ -78,7 +69,7 @@ public final class NBTUtils {
 					+ clazz.getName() + ").");
 		}
 	}
-
+	
 	/**
 	 * Gets the type code of a tag class.
 	 * 
@@ -89,6 +80,7 @@ public final class NBTUtils {
 	 *             if the tag class is invalid.
 	 */
 	public static int getTypeCode(Class<? extends Tag> clazz) {
+	
 		if (clazz.equals(ByteArrayTag.class)) {
 			return NBTConstants.TYPE_BYTE_ARRAY;
 		} else if (clazz.equals(ByteTag.class)) {
@@ -118,7 +110,7 @@ public final class NBTUtils {
 					+ clazz.getName() + ").");
 		}
 	}
-
+	
 	/**
 	 * Gets the class of a type of tag.
 	 * 
@@ -129,41 +121,43 @@ public final class NBTUtils {
 	 *             if the tag type is invalid.
 	 */
 	public static Class<? extends Tag> getTypeClass(int type) {
-		switch (type) {
-		case NBTConstants.TYPE_END:
-			return EndTag.class;
-		case NBTConstants.TYPE_BYTE:
-			return ByteTag.class;
-		case NBTConstants.TYPE_SHORT:
-			return ShortTag.class;
-		case NBTConstants.TYPE_INT:
-			return IntTag.class;
-		case NBTConstants.TYPE_LONG:
-			return LongTag.class;
-		case NBTConstants.TYPE_FLOAT:
-			return FloatTag.class;
-		case NBTConstants.TYPE_DOUBLE:
-			return DoubleTag.class;
-		case NBTConstants.TYPE_BYTE_ARRAY:
-			return ByteArrayTag.class;
-		case NBTConstants.TYPE_STRING:
-			return StringTag.class;
-		case NBTConstants.TYPE_LIST:
-			return ListTag.class;
-		case NBTConstants.TYPE_COMPOUND:
-			return CompoundTag.class;
-		case NBTConstants.TYPE_INT_ARRAY:
-			return IntArrayTag.class;
-		default:
-			throw new IllegalArgumentException("[JNBT] Invalid tag type : " + type
-					+ ".");
-		}
+	
+		switch (type)
+			{
+				case NBTConstants.TYPE_END :
+					return EndTag.class;
+				case NBTConstants.TYPE_BYTE :
+					return ByteTag.class;
+				case NBTConstants.TYPE_SHORT :
+					return ShortTag.class;
+				case NBTConstants.TYPE_INT :
+					return IntTag.class;
+				case NBTConstants.TYPE_LONG :
+					return LongTag.class;
+				case NBTConstants.TYPE_FLOAT :
+					return FloatTag.class;
+				case NBTConstants.TYPE_DOUBLE :
+					return DoubleTag.class;
+				case NBTConstants.TYPE_BYTE_ARRAY :
+					return ByteArrayTag.class;
+				case NBTConstants.TYPE_STRING :
+					return StringTag.class;
+				case NBTConstants.TYPE_LIST :
+					return ListTag.class;
+				case NBTConstants.TYPE_COMPOUND :
+					return CompoundTag.class;
+				case NBTConstants.TYPE_INT_ARRAY :
+					return IntArrayTag.class;
+				default :
+					throw new IllegalArgumentException(
+							"[JNBT] Invalid tag type : " + type + ".");
+			}
 	}
-
+	
 	/**
 	 * Default private constructor.
 	 */
 	private NBTUtils() {
-
+	
 	}
 }
