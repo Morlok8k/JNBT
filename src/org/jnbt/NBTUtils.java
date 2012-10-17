@@ -74,7 +74,7 @@ public final class NBTUtils {
 		} else if (clazz.equals(StringTag.class)) {
 			return "TAG_String";
 		} else {
-			throw new IllegalArgumentException("Invalid tag classs ("
+			throw new IllegalArgumentException("[JNBT] Invalid tag classs ("
 					+ clazz.getName() + ").");
 		}
 	}
@@ -114,7 +114,7 @@ public final class NBTUtils {
 		} else if (clazz.equals(StringTag.class)) {
 			return NBTConstants.TYPE_STRING;
 		} else {
-			throw new IllegalArgumentException("Invalid tag classs ("
+			throw new IllegalArgumentException("[JNBT] Invalid tag classs ("
 					+ clazz.getName() + ").");
 		}
 	}
@@ -155,7 +155,7 @@ public final class NBTUtils {
 		case NBTConstants.TYPE_INT_ARRAY:
 			return IntArrayTag.class;
 		default:
-			throw new IllegalArgumentException("Invalid tag type : " + type
+			throw new IllegalArgumentException("[JNBT] Invalid tag type : " + type
 					+ ".");
 		}
 	}

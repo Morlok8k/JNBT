@@ -134,7 +134,7 @@ public final class NBTInputStream implements Closeable {
 		case NBTConstants.TYPE_END:
 			if (depth == 0) {
 				throw new IOException(
-						"TAG_End found without a TAG_Compound/TAG_List tag preceding it.");
+						"[JNBT] TAG_End found without a TAG_Compound/TAG_List tag preceding it.");
 			} else {
 				return new EndTag();
 			}
@@ -168,7 +168,7 @@ public final class NBTInputStream implements Closeable {
 			for (int i = 0; i < length; i++) {
 				Tag tag = readTagPayload(childType, "", depth + 1);
 				if (tag instanceof EndTag) {
-					throw new IOException("TAG_End not permitted in a list.");
+					throw new IOException("[JNBT] TAG_End not permitted in a list.");
 				}
 				tagList.add(tag);
 			}
@@ -194,7 +194,7 @@ public final class NBTInputStream implements Closeable {
 			}
 			return new IntArrayTag(name, ints);
 		default:
-			throw new IOException("Invalid tag type: " + type + ".");
+			throw new IOException("[JNBT] Invalid tag type: " + type + ".");
 		}
 	}
 

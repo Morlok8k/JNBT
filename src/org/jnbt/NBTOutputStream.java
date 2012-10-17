@@ -93,7 +93,7 @@ public final class NBTOutputStream implements Closeable {
 		os.write(nameBytes);
 
 		if (type == NBTConstants.TYPE_END) {
-			throw new IOException("Named TAG_End not permitted.");
+			throw new IOException("[JNBT] Named TAG_End not permitted.");
 		}
 
 		writeTagPayload(tag);
@@ -147,7 +147,7 @@ public final class NBTOutputStream implements Closeable {
 			writeIntArrayTagPayload((IntArrayTag) tag);
 			break;
 		default:
-			throw new IOException("Invalid tag type: " + type + ".");
+			throw new IOException("[JNBT] Invalid tag type: " + type + ".");
 		}
 	}
 
