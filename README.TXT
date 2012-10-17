@@ -1,4 +1,4 @@
-JNBT
+JNBT 1.2 Beta
 
 The original JNBT project seems to have been abandoned.
 This fork of JNBT has added support for Tag_Int_Array
