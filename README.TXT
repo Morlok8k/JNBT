@@ -17,6 +17,18 @@ For more information about the project, see http://jnbt.sf.net/.
 
 --------------
 
+JNBT: The Java NBT Library
+
+What is NBT?
+
+NBT, or Named Binary Tag, is a file format created by Markus Persson for use with Minecraft levels. Although originally designed for Minecraft levels, it is appropriate for the vast majority of use cases.
+
+What is JNBT?
+
+JNBT is a library that can read and write NBT files, written in Java by Graham Edgecombe and available open-source under the BSD license.
+
+--------------
+
 Version History:
 1.3 (Morlok8k)
 - Changed encoding of .java files to UTF-8
