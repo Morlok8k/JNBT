@@ -101,6 +101,12 @@ public final class NBTInputStream implements Closeable {
 		this.is = new DataInputStream(new GZIPInputStream(is));
 	}
 	
+	//TODO: comment this.  supports raw Gziped data.
+	// author: ensirius
+	public NBTInputStream(final DataInputStream is) {
+                this.is = is;
+        }
+	
 	/**
 	 * Reads an NBT tag from the stream.
 	 * 
