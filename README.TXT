@@ -1,4 +1,4 @@
-JNBT 1.3 Beta
+JNBT 1.4 Beta
 
 The original JNBT project seems to have been abandoned.
 This fork of JNBT has mainly added support for Tag_Int_Array
@@ -30,7 +30,7 @@ JNBT is a library that can read and write NBT files, written in Java by Graham E
 --------------
 
 Version History:
-1.4 (In process...)
+1.4 (Code only, so far)
 - (pruby) InputStream gzip/not-gziped support
 - (ensirius) Raw DataInputStream support
 
