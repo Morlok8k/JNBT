@@ -76,11 +76,28 @@ public final class NBTInputStream implements Closeable {
 	 * 
 	 * @param is
 	 *            The input stream.
+	 * @param gzipped
+	 *            Whether the stream is GZip-compressed.
+	 * @throws IOException
+	 *             if an I/O error occurs.
+	 */
+	public NBTInputStream(InputStream is, final boolean gzipped) throws IOException {
+		if (gzipped) {
+			is = new GZIPInputStream(is);
+		}
+		this.is = new DataInputStream(is);
+	}
+	
+	/**
+	 * Creates a new <code>NBTInputStream</code>, which will source its data
+	 * from the specified GZIP-compressed input stream.
+	 * 
+	 * @param is
+	 *            The input stream.
 	 * @throws IOException
 	 *             if an I/O error occurs.
 	 */
 	public NBTInputStream(final InputStream is) throws IOException {
-	
 		this.is = new DataInputStream(new GZIPInputStream(is));
 	}
 	

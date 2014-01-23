@@ -69,7 +69,7 @@ public final class NBTOutputStream implements Closeable {
 	
 	/**
 	 * Creates a new <code>NBTOutputStream</code>, which will write data to the
-	 * specified underlying output stream.
+	 * specified underlying output stream, GZip-compressed.
 	 * 
 	 * @param os
 	 *            The output stream.
@@ -79,6 +79,25 @@ public final class NBTOutputStream implements Closeable {
 	public NBTOutputStream(final OutputStream os) throws IOException {
 	
 		this.os = new DataOutputStream(new GZIPOutputStream(os));
+	}
+
+	
+	/**
+	 * Creates a new <code>NBTOutputStream</code>, which will write data to the
+	 * specified underlying output stream.
+	 * 
+	 * @param os
+	 *            The output stream.
+	 * @param gzipped
+	 *            Whether the output stream should be GZip-compressed.
+	 * @throws IOException
+	 *             if an I/O error occurs.
+	 */
+	public NBTOutputStream(OutputStream os, final boolean gzipped) throws IOException {
+		if (gzipped) {
+			os = new GZIPOutputStream(os);
+		}
+		this.os = new DataOutputStream(os);
 	}
 	
 	/**
