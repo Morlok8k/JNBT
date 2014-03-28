@@ -30,7 +30,7 @@ JNBT is a library that can read and write NBT files, written in Java by Graham E
 --------------
 
 Version History:
-1.4 (Code only, so far)
+1.4
 - (pruby) InputStream gzip/not-gziped support
 - (ensirius) Raw DataInputStream support
 
