@@ -73,6 +73,10 @@ public final class CompoundTag extends Tag {
 		return value;
 	}
 	
+	public StringTag getStringTag(String key) {
+		return StringTag.class.cast(value.get(key);
+	}
+	
 	@Override
 	public String toString() {
 	
