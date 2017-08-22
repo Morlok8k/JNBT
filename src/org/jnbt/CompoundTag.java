@@ -73,8 +73,44 @@ public final class CompoundTag extends Tag {
 		return value;
 	}
 	
+	public ByteTag getByteTag(String key) {
+		return ByteTag.class.cast(value.get(key));
+	}
+	
+	public ShortTag getShortTag(String key) {
+		return ShortTag.class.cast(value.get(key));
+	}
+	
+	public IntTag getIntTag(String key) {
+		return IntTag.class.cast(value.get(key));
+	}
+	
+	public LongTag getLongTag(String key) {
+		return LongTag.class.cast(value.get(key));
+	}
+	
+	public FloatTag getFloatTag(String key) {
+		return FloatTag.class.cast(value.get(key));
+	}
+	
+	public DoubleTag getDoubleTag(String key) {
+		return DoubleTag.class.cast(value.get(key));
+	}
+	
+	public ByteArrayTag getByteArrayTag(String key) {
+		return ByteArrayTag.class.cast(value.get(key));
+	}
+	
 	public StringTag getStringTag(String key) {
-		return StringTag.class.cast(value.get(key);
+		return StringTag.class.cast(value.get(key));
+	}
+	
+	public ListTag getListTag(String key) {
+		return ListTag.class.cast(value.get(key));
+	}
+	
+	public CompoundTag getCompoundTag(String key) {
+		return CompoundTag.class.cast(value.get(key));
 	}
 	
 	@Override
