@@ -78,6 +78,8 @@ public final class NBTUtils {
 			return "TAG_Short";
 		} else if (clazz.equals(StringTag.class)) {
 			return "TAG_String";
+		} else if (clazz.equals(LongArrayTag.class)) {
+			return "TAG_Long_Array";
 		} else {
 			throw new IllegalArgumentException("[JNBT] Invalid tag classs ("
 					+ clazz.getName() + ").");
@@ -119,6 +121,8 @@ public final class NBTUtils {
 			return NBTConstants.TYPE_SHORT;
 		} else if (clazz.equals(StringTag.class)) {
 			return NBTConstants.TYPE_STRING;
+		} else if (clazz.equals(LongArrayTag.class)) {
+			return NBTConstants.TYPE_LONG_ARRAY;
 		} else {
 			throw new IllegalArgumentException("[JNBT] Invalid tag classs ("
 					+ clazz.getName() + ").");
@@ -162,6 +166,8 @@ public final class NBTUtils {
 					return CompoundTag.class;
 				case NBTConstants.TYPE_INT_ARRAY :
 					return IntArrayTag.class;
+				case NBTConstants.TYPE_LONG_ARRAY:
+					return LongArrayTag.class;
 				default :
 					throw new IllegalArgumentException(
 							"[JNBT] Invalid tag type : " + type + ".");
