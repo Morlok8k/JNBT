@@ -78,46 +78,6 @@ public abstract class Tag {
 	 */
 	public abstract Object getValue();
 	
-	public ByteTag getAsByteTag() {
-		return ByteTag.class.cast(this);
-	}
-	
-	public ShortTag getAsShortTag() {
-		return ShortTag.class.cast(this);
-	}
-	
-	public IntTag getAsIntTag() {
-		return IntTag.class.cast(this);
-	}
-	
-	public LongTag getAsLongTag() {
-		return LongTag.class.cast(this);
-	}
-	
-	public FloatTag getAsFloatTag() {
-		return FloatTag.class.cast(this);
-	}
-	
-	public DoubleTag getAsDoubleTag() {
-		return DoubleTag.class.cast(this);
-	}
-	
-	public ByteArrayTag getAsByteArrayTag() {
-		return ByteArrayTag.class.cast(this);
-	}
-	
-	public StringTag getAsStringTag() {
-		return StringTag.class.cast(this);
-	}
-	
-	public ListTag getAsListTag() {
-		return ListTag.class.cast(this);
-	}
-	
-	public CompoundTag getAsCompoundTag() {
-		return CompoundTag.class.cast(this);
-	}
-	
 	/*
 	 * (non-Javadoc)
 	 * @see java.lang.Object#hashCode()

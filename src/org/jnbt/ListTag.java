@@ -91,46 +91,6 @@ public final class ListTag extends Tag {
 		return value;
 	}
 	
-	public ByteTag getByteTag(int index) {
-		return ByteTag.class.cast(value.get(index));
-	}
-	
-	public ShortTag getShortTag(int index) {
-		return ShortTag.class.cast(value.get(index));
-	}
-	
-	public IntTag getIntTag(int index) {
-		return IntTag.class.cast(value.get(index));
-	}
-	
-	public LongTag getLongTag(int index) {
-		return LongTag.class.cast(value.get(index));
-	}
-	
-	public FloatTag getFloatTag(int index) {
-		return FloatTag.class.cast(value.get(index));
-	}
-	
-	public DoubleTag getDoubleTag(int index) {
-		return DoubleTag.class.cast(value.get(index));
-	}
-	
-	public ByteArrayTag getByteArrayTag(int index) {
-		return ByteArrayTag.class.cast(value.get(index));
-	}
-	
-	public StringTag getStringTag(int index) {
-		return StringTag.class.cast(value.get(index));
-	}
-	
-	public ListTag getListTag(int index) {
-		return ListTag.class.cast(value.get(index));
-	}
-	
-	public CompoundTag getCompoundTag(int index) {
-		return CompoundTag.class.cast(value.get(index));
-	}
-	
 	@Override
 	public String toString() {
 	
