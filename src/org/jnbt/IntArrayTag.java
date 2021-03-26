@@ -72,10 +72,6 @@ public final class IntArrayTag extends Tag {
 		return value;
 	}
 	
-	public int getByteTag(int index) {
-		return value[index];
-	}
-	
 	@Override
 	public String toString() {
 	
